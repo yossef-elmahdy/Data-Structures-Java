@@ -130,5 +130,51 @@ public class Graph {
 			}
 		}
 	}
+	
+	private void DFSPath(int order, boolean visited[]) {
+		visited[order] = true;
+		Edge current = this.vertices.get(order).firstEdge; 
+		int endPoint = -1;
+		while (current != null) {
+			endPoint = current.getEndPoint();
+			if (!visited[endPoint]) {
+				this.DFSPath(endPoint, visited);
+			}
+			current = current.getNextEdge(); 
+		}
+	}
+	
+	public boolean findPath(int fromVertex, int toVertex) {
+		if ((fromVertex >= 0 && fromVertex < this.numVertices) 
+				&& (toVertex >= 0 && toVertex < this.numVertices)) {
+			boolean[] visited = new boolean[this.numVertices];
+			this.DFSPath(fromVertex, visited);
+			return visited[toVertex]; 
+		} else {
+			throw new ArrayIndexOutOfBoundsException(); 
+		}
+	}
+	
+	public boolean isCyclic(int vertex) {
+		if (vertex >= 0 && vertex < this.numVertices) {
+			boolean[] visited = new boolean[this.numVertices];
+			Edge start = this.vertices.get(vertex).firstEdge; 
+			if (start != null) {
+				this.DFSPath(start.getEndPoint(), visited);
+			}
+			return visited[vertex]; 
+		} else {
+			throw new ArrayIndexOutOfBoundsException(); 
+		}
+	}
+	
+	public boolean containCycle() {
+		for (int i = 0; i < this.numVertices; ++i) {
+			if (this.isCyclic(i)) {
+				return true; 
+			}
+		}
+		return false;
+	}
 
 }
