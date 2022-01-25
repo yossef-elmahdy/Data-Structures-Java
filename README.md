@@ -12,6 +12,6 @@ Implementation for the most important data structures using Java. It is for revi
 And [Reverse Polish Notation](https://github.com/yossef-elmahdy/Data-Structures-Java/blob/main/code/PolishNotation.java) (RPN) for turning into and expression to RPN (and vice versa) and evaluating the expression. 
 
 ## Resources Used for Learning 
-[CS367: Introduction to Data Structure](http://pages.cs.wisc.edu/~vernon/cs367/current/assignments.html), University of Wisconsin-Madison, U.S. 
-[CS 214: Data Structures, Dr.Waleed Youssef](https://github.com/DrWaleedAYousef/Teaching/tree/master/DataStructures), University of Helwan, Egypt. 
+- [CS367: Introduction to Data Structure](http://pages.cs.wisc.edu/~vernon/cs367/current/assignments.html), University of Wisconsin-Madison, U.S. 
+- [CS 214: Data Structures, Dr.Waleed Youssef](https://github.com/DrWaleedAYousef/Teaching/tree/master/DataStructures), University of Helwan, Egypt. 
 
