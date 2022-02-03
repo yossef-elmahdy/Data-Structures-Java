@@ -71,9 +71,9 @@ public class List {
         this.add(item, i);
     }
 
-    public boolean add(Object item, int pos) throws ArrayIndexOutOfBoundsException {
+    public boolean add(Object item, int pos) throws IndexOutOfBoundsException {
         if (pos < 0 || pos > this.numItems) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
         } else {
             if (pos == this.numItems) {
                 this.items[pos] = item;
@@ -101,7 +101,7 @@ public class List {
     	if (!this.isEmpty() && pos < numItems) {
     		return this.items[pos]; 
     	}
-    	throw new ArrayIndexOutOfBoundsException(); 
+    	throw new IndexOutOfBoundsException(); 
     }
     
     private void shrinkArray() {
@@ -112,7 +112,7 @@ public class List {
 
     public boolean removeAt(int pos) {
         if (pos < 0 || pos >= this.numItems) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
         } else {
             if (pos == this.numItems - 1) {
                 this.items[pos] = null;

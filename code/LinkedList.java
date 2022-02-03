@@ -60,7 +60,7 @@ public class LinkedList {
                     if (current.prev == null) // first element 
                     {
                         this.root = current.next;
-                        this.root.prev = null;
+                        //this.root.prev = null;
                     } else if (current.next == null) // last element
                     {
                         current.prev.next = null;

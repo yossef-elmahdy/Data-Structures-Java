@@ -155,6 +155,29 @@ public class Graph {
 		}
 	}
 	
+	public int numComponents() {
+		boolean[] visited = new boolean[this.numVertices]; 
+		int cnt = 0;
+		for (int vertex = 0; vertex < this.numVertices; ++vertex) {
+			if (!visited[vertex]) {
+				++cnt; 
+				this.DFSPath(vertex, visited);
+			}
+		}
+		return cnt; 
+	}
+	
+	public void Components() {
+		boolean[] visited = new boolean[this.numVertices]; 
+		int cnt = 0;
+		for (int vertex = 0; vertex < this.numVertices; ++vertex) {
+			if (!visited[vertex]) {
+				System.out.println("Connection #" + (++cnt) + " starting from vertex " + vertex + ": ");
+				this.DFS(vertex, visited);
+			}
+		}
+	}
+	
 	public boolean isCyclic(int vertex) {
 		if (vertex >= 0 && vertex < this.numVertices) {
 			boolean[] visited = new boolean[this.numVertices];
@@ -169,12 +192,28 @@ public class Graph {
 	}
 	
 	public boolean containCycle() {
-		for (int i = 0; i < this.numVertices; ++i) {
-			if (this.isCyclic(i)) {
+		for (int vertex = 0; vertex < this.numVertices; ++vertex) {
+			if (this.isCyclic(vertex)) {
 				return true; 
 			}
 		}
 		return false;
 	}
+	
+	public int degree(int vertex) {
+		if (vertex >= 0 && vertex < this.numVertices) {
+			int cnt = 0; 
+			Edge current = this.vertices.get(vertex).firstEdge; 
+			while (current != null) {
+				++cnt; 
+				current = current.getNextEdge(); 
+			} 
+			return cnt; 
+		} else {
+			throw new ArrayIndexOutOfBoundsException(); 
+		}
+	}
+	
+
 
 }
