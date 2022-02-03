@@ -8,7 +8,7 @@ Implementation for the most important data structures using Java. It is for revi
 4. Queue (Array based, TODO: Linked based). 
 5. Binary Search Tree (BST) (Linked based). 
 6. Priority Queue (Heap concept using list). 
-7. Hash Table (List of linked lists).
+7. Hash Table (List of linked lists) -Resolving collision issue by chaining approach-.
 8. Graph (Mixed implmentation). "most favorable for me ^^". 
 
 And [Reverse Polish Notation](https://github.com/yossef-elmahdy/Data-Structures-Java/blob/main/code/PolishNotation.java) (RPN) for turning into a basic arithmetic expression to RPN (and vice versa) and evaluating the expression. 
